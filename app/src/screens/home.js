@@ -38,6 +38,8 @@ export default function Home() {
           showToast(response.message);
           dispatch(hideModel());
           refetch();
+        } else {
+          showToast(response.message);
         }
       })
       .catch((e) => showToast(e.message));
