@@ -5,6 +5,9 @@ const expenseSchema = new Schema({
   amount: { type: Number, required: true },
   transactionDate: {
     type: Date,
+    default: function () {
+      return new Date().now();
+    },
   },
 });
 
