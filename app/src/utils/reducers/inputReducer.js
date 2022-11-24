@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const inputSlice = createSlice({
-  name: "model",
+  name: "input",
   initialState: {
     value: {
       category: "",

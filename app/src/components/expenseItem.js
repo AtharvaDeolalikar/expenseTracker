@@ -26,9 +26,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#eeeff6",
     borderRadius: 8,
   },
-  categoryText: {},
+  categoryText: { fontSize: 18 },
   amountText: {
-    color: "black",
-    fontWeight: "bold",
+    color: "#696060",
   },
 });

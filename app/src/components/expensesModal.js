@@ -1,3 +1,4 @@
+import { MotiView } from "moti";
 import { useEffect } from "react";
 import {
   Modal,
@@ -16,10 +17,6 @@ export default function ExpensesModal({ addTransanction }) {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(resetInput());
-  }, []);
-
   return (
     <Modal
       transparent={true}
@@ -27,7 +24,7 @@ export default function ExpensesModal({ addTransanction }) {
       visible={modelOpen}
       animationType="fade"
       onRequestClose={() => {
-        dispatch(hideModel);
+        dispatch(hideModel());
       }}
     >
       <View style={styles.container}>

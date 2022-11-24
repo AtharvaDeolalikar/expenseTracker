@@ -9,6 +9,8 @@ import ExpensesModal from "../components/expensesModal";
 import showToast from "../utils/toast";
 import { useDispatch, useSelector } from "react-redux";
 import { hideModel } from "../utils/reducers/modelReducer";
+import { MotiView } from "moti";
+import { resetInput } from "../utils/reducers/inputReducer";
 
 export default function Home() {
   const input = useSelector((state) => state.input.value);
@@ -36,10 +38,11 @@ export default function Home() {
         response = await response.json();
         if (response.success) {
           showToast(response.message);
-          dispatch(hideModel());
           refetch();
+          dispatch(resetInput());
+          dispatch(hideModel());
         } else {
-          showToast(response.message);
+          showToast("An unknown error occured");
         }
       })
       .catch((e) => showToast(e.message));
@@ -63,7 +66,13 @@ export default function Home() {
       <ExpenseStats transanctions={data.data.expenses} />
       <View style={styles.paddingContainer}>
         <Transanctions transanctions={data.data.expenses} />
-        <AddTransanction />
+        <MotiView
+          from={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ type: "timing" }}
+        >
+          <AddTransanction />
+        </MotiView>
         <ExpensesModal addTransanction={addTransanction} />
       </View>
     </View>
