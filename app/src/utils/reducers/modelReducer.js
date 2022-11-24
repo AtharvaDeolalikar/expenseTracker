@@ -15,7 +15,6 @@ const modelSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { showModel, hideModel } = modelSlice.actions;
 
 export default modelSlice.reducer;

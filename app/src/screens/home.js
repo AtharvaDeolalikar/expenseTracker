@@ -20,7 +20,6 @@ export default function Home() {
   );
 
   async function addTransanction() {
-    console.log(input);
     expenseSchema
       .validate(input)
       .then(async () => {

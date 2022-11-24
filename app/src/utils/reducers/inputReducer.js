@@ -18,7 +18,6 @@ const inputSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { setInput, resetInput } = inputSlice.actions;
 
 export default inputSlice.reducer;
